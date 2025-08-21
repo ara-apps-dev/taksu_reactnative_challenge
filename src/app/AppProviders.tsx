@@ -1,3 +1,4 @@
+import { ModalProvider } from 'providers/modal-providers/ModalProvider';
 import React, { useEffect } from 'react';
 
 export const AppProviders = ({ children }: { children: React.ReactNode }) => {
@@ -5,5 +6,5 @@ export const AppProviders = ({ children }: { children: React.ReactNode }) => {
     // When the initialization process has completed
   }, []);
 
-  return <>{children}</>;
+  return <ModalProvider>{children}</ModalProvider>;
 };
