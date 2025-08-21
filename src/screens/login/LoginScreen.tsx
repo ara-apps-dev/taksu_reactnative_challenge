@@ -11,6 +11,7 @@ import { AppIcon } from '@components/ui/app-icon';
 import { useLogin } from '@hooks/useLogin';
 import { Formik } from 'formik';
 import { loginSchema } from '@schemas/login-schema/loginSchema';
+import { Colors } from '@styles/colors';
 
 const LoginScreen = () => {
   const appStyles = styles;
@@ -18,15 +19,18 @@ const LoginScreen = () => {
   return (
     <AppScreenWrapper
       barStyle="light-content"
-      statusBarBg="#36393F"
+      statusBarBg={Colors.bgPrimary}
       containerStyle={appStyles.container}
-      contentStyle={{ ...globalStyles.flexCenter }}
+      contentStyle={{
+        ...globalStyles.flexCenter,
+        ...{ width: responsiveWidth() },
+      }}
     >
       <Formik
         initialValues={{ name: '' }}
         validationSchema={loginSchema}
         onSubmit={values => {
-          userStore.setName(values.name);
+          userStore.setCurrentUser(values.name);
           goToHome();
         }}
       >

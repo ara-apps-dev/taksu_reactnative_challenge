@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
 import { globalStyles } from '../../styles/global';
+import { Colors } from '@styles/colors';
 
 export const styles = StyleSheet.create({
   container: {
     ...globalStyles.flexCenter,
-    backgroundColor: '#36393F',
+    backgroundColor: Colors.bgPrimary,
   },
   form: { gap: 20 },
-  errorText: { color: 'red', marginTop: 0 },
 });

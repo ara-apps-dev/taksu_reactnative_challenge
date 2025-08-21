@@ -1,24 +1,25 @@
 import { LoginNavigationProp, RootStackRoutes } from '@navigation/RootRoutes';
 import { useNavigation } from '@react-navigation/native';
-import { UserModel } from '@stores/models/UserModel';
+import { UsersStore } from 'mobx/stores/UserStore';
 import { useLocalObservable } from 'mobx-react-lite';
 import { onSnapshot } from 'mobx-state-tree';
 import { useMemo } from 'react';
+import { logMessage } from '@utils/logger';
 
 export const useLogin = () => {
-  const { navigate } = useNavigation<LoginNavigationProp>();
-  const userStore = useLocalObservable(() => UserModel.create());
+  const { replace } = useNavigation<LoginNavigationProp>();
+  const userStore = useLocalObservable(() => UsersStore.create({ users: [] }));
 
   useMemo(() => {
-    userStore.loadName();
+    userStore.loadUsers();
   }, [userStore]);
 
   onSnapshot(userStore, snapshot => {
-    console.log('User snapshot:', snapshot);
+    logMessage('User snapshot:', snapshot);
   });
 
   const goToHome = () => {
-    navigate(RootStackRoutes.Home);
+    replace(RootStackRoutes.Home);
   };
 
   return { userStore, goToHome };
