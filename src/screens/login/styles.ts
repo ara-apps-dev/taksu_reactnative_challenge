@@ -7,4 +7,5 @@ export const styles = StyleSheet.create({
     backgroundColor: '#36393F',
   },
   form: { gap: 20 },
+  errorText: { color: 'red', marginTop: 0 },
 });

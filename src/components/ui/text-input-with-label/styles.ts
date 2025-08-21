@@ -3,10 +3,10 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    gap: 10,
+    gap: 6,
   },
   label: {
-    marginBottom: 6,
+    marginBottom: 4,
     ...textH3,
   },
   input: {
@@ -17,4 +17,5 @@ export const styles = StyleSheet.create({
     paddingVertical: 20,
     ...label2,
   },
+  errorText: { color: 'red', marginTop: 0 },
 });
