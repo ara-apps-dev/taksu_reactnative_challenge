@@ -7,6 +7,7 @@
       "@components/*": ["components/*"],
       "@hooks/*": ["hooks/*"],
       "@navigation/*": ["navigation/*"],
+      "@providers/*": ["providers/*"],
       "@schemas/*": ["schemas/*"],
       "@screens/*": ["screens/*"],
       "@stores/*": ["stores/*"],
