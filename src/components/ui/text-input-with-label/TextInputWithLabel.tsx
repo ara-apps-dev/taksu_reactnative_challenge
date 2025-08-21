@@ -3,6 +3,7 @@ import { View, Text, TextInput } from 'react-native';
 import { styles } from './styles';
 import { Props } from './props';
 import { label3 } from '@styles/fonts';
+import { globalStyles } from '@styles/global';
 
 export default function TextInputWithLabel({
   label,
@@ -20,7 +21,7 @@ export default function TextInputWithLabel({
         {...props}
       />
       {error && (
-        <Text style={{ ...label3, ...appStyles.errorText }}>{error}</Text>
+        <Text style={{ ...label3, ...globalStyles.errorText }}>{error}</Text>
       )}
     </View>
   );

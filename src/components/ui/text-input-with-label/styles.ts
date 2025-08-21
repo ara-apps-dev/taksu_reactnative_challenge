@@ -1,3 +1,4 @@
+import { Colors } from '@styles/colors';
 import { label2, textH3 } from '@styles/fonts';
 import { StyleSheet } from 'react-native';
 
@@ -11,11 +12,10 @@ export const styles = StyleSheet.create({
   },
   input: {
     minHeight: 56,
-    backgroundColor: '#40444B',
+    backgroundColor: Colors.cardPrimary,
     borderRadius: 5,
     paddingHorizontal: 20,
     paddingVertical: 20,
     ...label2,
   },
-  errorText: { color: 'red', marginTop: 0 },
 });

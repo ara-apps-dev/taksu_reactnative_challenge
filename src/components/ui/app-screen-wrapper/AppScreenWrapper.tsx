@@ -3,13 +3,14 @@ import { ScrollView, StatusBar, View } from 'react-native';
 import { Props } from './props';
 import { globalStyles } from '../../../styles/global';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '@styles/colors';
 
 export default function AppScreenWrapper({
   header,
   children,
   footer,
-  backgroundColor = '#36393F',
-  statusBarBg = 'transparent',
+  backgroundColor = Colors.bgPrimary,
+  statusBarBg = Colors.transparent,
   barStyle,
   hideStatusBar = false,
   contentPadding = 0,
