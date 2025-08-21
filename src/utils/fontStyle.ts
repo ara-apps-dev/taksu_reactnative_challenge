@@ -1,5 +1,6 @@
 import { TextStyle } from 'react-native';
 import { fonts } from '@assets/fonts/fonts';
+import { Colors } from '@styles/colors';
 
 type FontVariant = keyof typeof fonts;
 type FontWeight = keyof (typeof fonts)[FontVariant];
@@ -17,7 +18,7 @@ export const fontStyle = ({
   weight = 'regular' as keyof (typeof fonts)['regular'],
   size = 14,
   lineHeight,
-  color = '#000',
+  color = Colors.textPrimary,
 }: FontOptions): TextStyle => {
   const selectedVariant = fonts[variant] as (typeof fonts)['regular'];
   return {
