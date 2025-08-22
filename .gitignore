@@ -2,6 +2,10 @@
 #
 .DS_Store
 
+# History files
+.history/
+.history
+
 # Xcode
 #
 build/
@@ -20,7 +24,10 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-**/.xcode.env.local
+ios/*.xcarchive
+ios/Pods/
+ios/Podfile.lock
+ios/.xcode.env.local
 
 # Android/IntelliJ
 #
@@ -30,41 +37,61 @@ build/
 local.properties
 *.iml
 *.hprof
-.cxx/
-*.keystore
-!debug.keystore
-.kotlin/
+android/app/build/
+android/build/
+android/gradle/
+android/gradle.properties
+android/keystore.properties
+android/local.properties
+android/app/release/
+android/app/.cxx/
+android/key.properties
 
 # node.js
 #
 node_modules/
 npm-debug.log
 yarn-error.log
+.yarn
+.yarn/
+.yarn/install-state.gz
+.yarn-integrity
+.yarnrc
+yarn.lock
+
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+!debug.keystore
+.kotlin/
 
 # fastlane
 #
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/
-
-**/fastlane/report.xml
-**/fastlane/Preview.html
-**/fastlane/screenshots
-**/fastlane/test_output
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
+*/fastlane/test_output
 
 # Bundle artifact
 *.jsbundle
+*.bundle
+*.bundle.map
 
 # Ruby / CocoaPods
 **/Pods/
 /vendor/bundle/
 
-# Temporary files created by Metro to check the health of the file watcher
+# Temporary files
 .metro-health-check*
+.env
+.env.*
+temp/
+tmp/
 
 # testing
 /coverage
+__tests__/coverage/
 
 # Yarn
 .yarn/*
@@ -73,3 +100,40 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Project specific
+src/pages/BiometricPopup/index.js
+/ios/assets
+
+# Amplify
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/logs
+amplify/mock-data
+amplify/backend/amplify-meta.json
+amplify/backend/awscloudformation
+amplify/backend/.temp
+build/
+dist/
+node_modules/
+awsconfiguration.json
+amplifyconfiguration.json
+amplifyconfiguration.dart
+amplify-build-config.json
+amplify-gradle-config.json
+amplifytools.xcconfig
+.secret-*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# iOS specific
+ios/build/
+ios/DerivedData/
+ios/*.xcworkspace/xcuserdata/
+ios/*.xcodeproj/xcuserdata/
+ios/Index/
